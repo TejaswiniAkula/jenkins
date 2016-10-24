@@ -1,0 +1,16 @@
+.logon blue3027/dbc,dbc;
+
+delete user dr183687_usr;
+drop user dr183687_usr;
+
+create user dr183687_usr as perm=3e7 *(hashamp()+1) password=dr183687_usr;
+grant all on  dr183687_usr to dr183687_usr,dbc with grant option;
+
+.logon dr183687_usr,dr183687_usr;
+.logon dbc,dbc
+
+delete user dr183687_usr; 
+drop user dr183687_usr; 
+
+.logoff;
+.quit;
